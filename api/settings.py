@@ -16,11 +16,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '*',             
     "feelnigeriabackend.onrender.com",
+    "feel-nigeria-front-end.vercel.app",
     "localhost",
 ]  # For development only
 
@@ -36,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+    'api',
     'userauth.apps.UserauthConfig',
     'applications.apps.ApplicationsConfig',
     'rest_framework_simplejwt',
@@ -54,14 +56,21 @@ MIDDLEWARE = [
 
 # CORS Configuration - FIXED
 CORS_ALLOWED_ORIGINS = [
+    "https://feel-nigeria-front-end.vercel.app",
     "http://localhost:3000",
     "http://localhost:3001",  # Added this for your current port
     "http://127.0.0.1:3000",
     "http://127.0.0.1:3001",
-    "https://feel-nigeria-front-end.vercel.app",
+   
 ]
 
 CORS_ALLOW_CREDENTIALS = True
+
+# ✅ Trust these origins for CSRF
+CSRF_TRUSTED_ORIGINS = [
+    "https://feel-nigeria-front-end.vercel.app",
+    "https://feelnigeriabackend.onrender.com",
+]
 
 # Additional CORS settings for development
 CORS_ALLOW_HEADERS = [
@@ -90,14 +99,7 @@ SESSION_COOKIE_SAMESITE = 'Lax'
 SESSION_COOKIE_HTTPONLY = True
 CSRF_COOKIE_SAMESITE = 'Lax'
 CSRF_COOKIE_HTTPONLY = False
-CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:3000",
-    "http://localhost:3001",
-    "http://127.0.0.1:3000",
-    "http://127.0.0.1:3001",
-    "https://feel-nigeria-front-end.vercel.app",
-    "https://feelnigeriabackend.onrender.com",
-]
+
 
 ROOT_URLCONF = 'api.urls'
 
@@ -171,7 +173,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-# STATIC_URL = 'static/'
+# STATIC_URL = '/static/'
 
 # ✅ STATIC + MEDIA (for completeness)
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
