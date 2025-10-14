@@ -1,6 +1,7 @@
 from pathlib import Path
 from dotenv import load_dotenv
 import os
+from datetime import timedelta
 load_dotenv()
 
 
@@ -53,6 +54,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3001",  # Added this for your current port
     "http://127.0.0.1:3000",
     "http://127.0.0.1:3001",
+    "https://feel-nigeria-front-end.vercel.app",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
@@ -89,6 +91,8 @@ CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3001",
     "http://127.0.0.1:3000",
     "http://127.0.0.1:3001",
+    "https://feel-nigeria-front-end.vercel.app",
+    "https://feelnigeriabackend.onrender.com",
 ]
 
 ROOT_URLCONF = 'api.urls'
