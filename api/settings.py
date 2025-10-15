@@ -57,6 +57,7 @@ MIDDLEWARE = [
 # CORS Configuration - FIXED
 CORS_ALLOWED_ORIGINS = [
     "https://feel-nigeria-front-end.vercel.app",
+    "https://feel-nigeria-front-epqgxhkpc-woletokuns-projects.vercel.app",
     "http://localhost:3000",
     "http://localhost:3001",  # Added this for your current port
     "http://127.0.0.1:3000",
@@ -68,6 +69,7 @@ CORS_ALLOW_CREDENTIALS = True
 
 # ✅ Trust these origins for CSRF
 CSRF_TRUSTED_ORIGINS = [
+    "https://feel-nigeria-front-epqgxhkpc-woletokuns-projects.vercel.app",
     "https://feel-nigeria-front-end.vercel.app",
     "https://feelnigeriabackend.onrender.com",
 ]
@@ -99,6 +101,8 @@ SESSION_COOKIE_SAMESITE = 'Lax'
 SESSION_COOKIE_HTTPONLY = True
 CSRF_COOKIE_SAMESITE = 'Lax'
 CSRF_COOKIE_HTTPONLY = False
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 
 
 ROOT_URLCONF = 'api.urls'
