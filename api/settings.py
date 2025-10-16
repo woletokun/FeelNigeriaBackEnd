@@ -58,22 +58,23 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     "https://feel-nigeria-front-end.vercel.app",
     "https://feel-nigeria-front-epqgxhkpc-woletokuns-projects.vercel.app",
-    "http://localhost:3000",
-    "http://localhost:3001",  # Added this for your current port
-    "http://127.0.0.1:3000",
-    "http://127.0.0.1:3001",
+    "http://localhost",
+    "http://localhost",  # Added this for your current port
+    "http://127.0.0.1",
+    "http://127.0.0.1",
    
 ]
 # Optional (for dev)
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = False
 
 CORS_ALLOW_CREDENTIALS = True
 
 # ✅ Trust these origins for CSRF
 CSRF_TRUSTED_ORIGINS = [
-    "https://feel-nigeria-front-epqgxhkpc-woletokuns-projects.vercel.app",
     "https://feel-nigeria-front-end.vercel.app",
     "https://feelnigeriabackend.onrender.com",
+    "https://feel-nigeria-front-epqgxhkpc-woletokuns-projects.vercel.app",
+
 ]
 
 # Additional CORS settings for development
